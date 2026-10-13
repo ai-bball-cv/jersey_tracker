@@ -252,6 +252,10 @@ class PlayerTracker:
         """
         return list(self._tracks.get(track_id, []))
 
+    def team_sightings_for(self, track_id: int) -> list[TeamSighting]:
+        """Return all team-classifier sightings accumulated for a track so far."""
+        return list(self._team_tracks.get(track_id, []))
+
 
 # Backwards-compatible alias: prior code imported `NumberTracker`.
 NumberTracker = PlayerTracker
